@@ -15,10 +15,10 @@ const MyMessage = ({ message }) => {
     <div 
     className="message" 
     style={
-          { float:'right', 
+          { float: 'right', 
             marginRight: '18px',
             backgroundColor: '#3B2A50',
-            color: 'white' 
+            color: 'white', 
           }}>
           {message.text}
     </div>

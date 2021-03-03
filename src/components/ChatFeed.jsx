@@ -1,7 +1,7 @@
-import React from 'react'
 import MessagesForm from './MessagesForm'
 import MyMessage from './MyMessage'
 import TheirMessage from './TheirMessage'
+import Loader from './Loader'
 
 const ChatFeed = (props) => {
 
@@ -23,8 +23,11 @@ const ChatFeed = (props) => {
   }
 
   const renderMessages = () => {
+
     const keys = Object.keys(messages); // get the msj keys 
+
     return keys.map((key, index) => {
+
       const message = messages[key];
       const lastMessageKey = index === 0 ? null : keys[index - 1];
       const isMyMessage= userName === message.sender.username;
@@ -52,7 +55,7 @@ const ChatFeed = (props) => {
 
   renderMessages()
 
-  if(!chat) return 'Loading...O.o';
+  if(!chat) return <Loader />;
 
    return (
      <div className="chat-feed">
@@ -60,8 +63,9 @@ const ChatFeed = (props) => {
             <div className="chat-title">
               {chat?.title}
             </div>
+            <h3 className="members_title">MEMBERS</h3>
             <div className="chat-subtitle">
-              {chat.people.map((person) => `${person.person.username}`)}
+              {chat.people.map((person) => <div className='each-user'>{`${person.person.username}`}</div>)}
             </div>
        </div>
        {renderMessages()}

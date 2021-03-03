@@ -87,6 +87,7 @@
   color: #7554a0;
   font-weight: 800;
   font-size: 24px;
+  text-transform: uppercase;
 }
 
 .chat-subtitle {
@@ -94,6 +95,14 @@
   font-weight: 600;
   font-size: 12px;
   padding-top: 4px;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0.7;
+}
+
+.members_title {
+  color: #7554a0;
+  opacity: 0.7;
 }
 
 .message-row {
