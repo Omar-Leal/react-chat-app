@@ -38,7 +38,9 @@ const ChatFeed = (props) => {
               {
                 isMyMessage 
                 ? <MyMessage message={message} /> 
-                : <TheirMessage message={message} lastMessageKey={message[lastMessageKey]} />
+                : <TheirMessage message={message} lastMessageKey={message[lastMessageKey]}
+                
+                />
               }
             </div>
             <div className="read-receipts" style={{
@@ -65,7 +67,7 @@ const ChatFeed = (props) => {
             </div>
             <h3 className="members_title">MEMBERS</h3>
             <div className="chat-subtitle">
-              {chat.people.map((person) => <div className='each-user'>{`${person.person.username}`}</div>)}
+              {chat.people.map((person,idx) => <div key={idx} className='each-user'>{`${person.person.username}`}</div>)}
             </div>
        </div>
        {renderMessages()}
